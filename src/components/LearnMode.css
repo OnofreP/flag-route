@@ -1,0 +1,2115 @@
+/* =========================================================
+   ROUTE TRAINER — MODO APRENDER
+========================================================= */
+
+.learn-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 78% 18%,
+            #10271d,
+            transparent 32%
+        ),
+        #080d0b;
+    color: #f5f7f5;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.learn-header {
+    height: 70px;
+    padding: 0 28px;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    border-bottom: 1px solid #26312c;
+}
+
+.back-button {
+    justify-self: start;
+
+    padding: 10px 16px;
+
+    background: #101814;
+    color: #e8ecea;
+
+    border: 1px solid #35413b;
+    border-radius: 5px;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+.back-button:hover {
+    border-color: #b7ff32;
+    color: #b7ff32;
+}
+
+.learn-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.learn-title small {
+    color: #69766f;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.learn-title strong {
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.route-progress {
+    justify-self: end;
+
+    color: #b7ff32;
+
+    font-size: 13px;
+    font-weight: 1000;
+}
+
+.route-progress span {
+    margin: 0 3px;
+    color: #5d6862;
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+========================================================= */
+
+.learn-main {
+    width: min(1320px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 22px 0 18px;
+
+    display: grid;
+    grid-template-columns:
+        minmax(300px, 0.72fr)
+        minmax(550px, 1.28fr);
+
+    gap: 42px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   PANEL IZQUIERDO
+========================================================= */
+
+.route-panel {
+    min-width: 0;
+    padding-top: 8px;
+}
+
+.route-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.route-code {
+    width: 72px;
+    height: 72px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    background: #b7ff32;
+    color: #071008;
+
+    border-radius: 7px;
+
+    font-size: 43px;
+    font-weight: 1000;
+
+    box-shadow:
+        0 0 0 7px #b7ff3210;
+}
+
+.route-heading small {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #69766f;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.route-heading h1 {
+    margin: 0;
+
+    font-size: clamp(30px, 3vw, 43px);
+    line-height: 1;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   REFERENCIA
+========================================================= */
+
+.distance-card {
+    width: 100%;
+    max-width: 430px;
+
+    margin-top: 22px;
+    padding: 13px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    background: #101814;
+
+    border: 1px solid #29362f;
+    border-left: 4px solid #b7ff32;
+
+    border-radius: 5px;
+
+    box-sizing: border-box;
+}
+
+.distance-card small {
+    color: #707c76;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.distance-card strong {
+    color: #f3f6f4;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+========================================================= */
+
+.route-description {
+    max-width: 470px;
+
+    margin-top: 20px;
+}
+
+.route-description small {
+    color: #707c76;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+.route-description p {
+    margin: 9px 0 0;
+
+    color: #a2ada7;
+
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   TIP
+========================================================= */
+
+.learning-tip {
+    max-width: 470px;
+
+    margin-top: 18px;
+    padding: 11px 13px;
+
+    display: flex;
+    gap: 10px;
+
+    background: #b7ff3207;
+
+    border: 1px solid #b7ff3225;
+    border-radius: 5px;
+
+    box-sizing: border-box;
+}
+
+.learning-tip span {
+    flex-shrink: 0;
+
+    color: #f3f6f4;
+
+    font-size: 10px;
+    font-weight: 1000;
+}
+
+.learning-tip p {
+    margin: 0;
+
+    color: #7e8983;
+
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   RUTA PENDIENTE
+========================================================= */
+
+.pending-route {
+    max-width: 470px;
+
+    margin-top: 18px;
+    padding: 11px;
+
+    border: 1px dashed #5c665f;
+    border-radius: 5px;
+
+    color: #778078;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    text-align: center;
+    letter-spacing: 1px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DEMOSTRACIÓN / PRACTICAR
+========================================================= */
+
+.training-selector {
+    max-width: 470px;
+
+    margin-top: 18px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+}
+
+.training-selector button {
+    min-height: 39px;
+
+    padding: 9px 10px;
+
+    background: #101814;
+    color: #839088;
+
+    border: 1px solid #2d3a34;
+    border-radius: 4px;
+
+    font-size: 9px;
+    font-weight: 1000;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition: 0.18s ease;
+}
+
+.training-selector button:hover {
+    border-color: #b7ff32;
+    color: #b7ff32;
+}
+
+.training-selector button.active {
+    background: #b7ff32;
+    border-color: #b7ff32;
+    color: #071008;
+}
+
+.training-selector button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SELECTOR A — Z
+========================================================= */
+
+.mini-route-list {
+    max-width: 470px;
+
+    margin-top: 13px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(13, minmax(0, 1fr));
+
+    gap: 5px;
+}
+
+.mini-route-list button {
+    aspect-ratio: 1 / 1;
+
+    min-width: 0;
+    padding: 0;
+
+    display: grid;
+    place-items: center;
+
+    background: #101814;
+    color: #8e9993;
+
+    border: 1px solid #2b3731;
+    border-radius: 4px;
+
+    font-size: 10px;
+    font-weight: 1000;
+
+    cursor: pointer;
+
+    transition: 0.15s ease;
+}
+
+.mini-route-list button:hover {
+    border-color: #b7ff32;
+    color: #b7ff32;
+}
+
+.mini-route-list button.active {
+    background: #b7ff32;
+    border-color: #b7ff32;
+    color: #071008;
+}
+
+
+/* =========================================================
+   SECCIÓN DEL CAMPO
+========================================================= */
+
+.field-section {
+    min-width: 0;
+}
+
+.field-header {
+    height: 38px;
+    margin-bottom: 7px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.field-header div {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-header small {
+    color: #66736c;
+
+    font-size: 7px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.field-header strong {
+    margin-top: 3px;
+
+    font-size: 15px;
+}
+
+.field-header > span {
+    color: #66736c;
+
+    font-size: 8px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   CAMPO
+========================================================= */
+
+.learn-field {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1.55 / 1;
+
+    overflow: hidden;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 9.9%,
+            #ffffff0b 10%
+        ),
+        linear-gradient(
+            90deg,
+            #103b25,
+            #16502f,
+            #103b25
+        );
+
+    border: 1px solid #ffffff28;
+    border-radius: 7px;
+
+    box-shadow:
+        0 20px 60px #00000055;
+}
+
+
+/* =========================================================
+   YARDAS
+========================================================= */
+
+.field-grid {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.clean-yard-line {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    height: 1px;
+
+    background: #ffffff11;
+}
+
+.clean-yard-line.line-of-scrimmage {
+    height: 2px;
+
+    background: transparent;
+
+    border-top: 2px dashed #ffffff55;
+}
+
+.clean-yard-line.highlighted-yard {
+    height: 2px;
+
+    background: #b7ff3260;
+
+    box-shadow:
+        0 0 14px #b7ff3220;
+}
+
+.clean-yard-number {
+    position: absolute;
+
+    left: 13px;
+    top: -9px;
+
+    min-width: 42px;
+
+    padding: 3px 6px;
+
+    box-sizing: border-box;
+
+    background: #0b2b1b;
+    color: #7d8b83;
+
+    border-radius: 3px;
+
+    font-size: 7px;
+    font-weight: 1000;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+.highlighted-yard .clean-yard-number {
+    background: #b7ff32;
+    color: #071008;
+}
+
+.target-yard-label {
+    position: absolute;
+
+    right: 13px;
+    top: -9px;
+
+    padding: 3px 7px;
+
+    background: #b7ff32;
+    color: #071008;
+
+    border-radius: 3px;
+
+    font-size: 7px;
+    font-weight: 1000;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   SVG / RUTAS
+========================================================= */
+
+.learn-route-svg {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 3;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.animated-route {
+    fill: none;
+
+    stroke: #b7ff32;
+    stroke-width: 5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    vector-effect: non-scaling-stroke;
+
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+
+    filter:
+        drop-shadow(
+            0 0 5px #b7ff3266
+        );
+
+    animation:
+        drawLearnRoute
+        1.4s
+        ease-out
+        forwards;
+}
+
+@keyframes drawLearnRoute {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* =========================================================
+   JUGADORES
+========================================================= */
+
+.formation-player {
+    position: absolute;
+
+    z-index: 6;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 3px;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+.formation-circle {
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    border: 3px solid #071008;
+    border-radius: 50%;
+
+    font-size: 10px;
+    font-weight: 1000;
+
+    box-shadow:
+        0 0 0 3px #ffffff18;
+}
+
+.formation-player span {
+    padding: 2px 5px;
+
+    background: #071008dd;
+    color: #dfe5e2;
+
+    border-radius: 3px;
+
+    font-size: 7px;
+    font-weight: 1000;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* WR */
+
+.receiver-player {
+    left: 50%;
+    top: 75%;
+}
+
+.receiver-player .formation-circle {
+    background: #ff9f1c;
+    color: #071008;
+}
+
+
+/* CENTRO */
+
+.center-player {
+    left: 70%;
+    top: 75%;
+}
+
+.center-player .formation-circle {
+    background: #e9eeee;
+    color: #071008;
+}
+
+
+/* QB */
+
+.qb-player {
+    left: 82%;
+    top: 85%;
+}
+
+.qb-player .formation-circle {
+    background: #55b7ff;
+    color: #071008;
+}
+
+
+/* RB */
+
+.rb-player {
+    left: 91%;
+    top: 88%;
+}
+
+.rb-player .formation-circle {
+    background: #ff5b5b;
+    color: #071008;
+}
+
+
+/* =========================================================
+   PARTE INFERIOR DEL CAMPO
+========================================================= */
+
+.field-bottom {
+    min-height: 40px;
+
+    margin-top: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.field-legend {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+.field-legend span {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #75817b;
+
+    font-size: 7px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.field-legend i {
+    width: 8px;
+    height: 8px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+}
+
+.legend-wr {
+    background: #ff9f1c;
+}
+
+.legend-center {
+    background: #e9eeee;
+}
+
+.legend-qb {
+    background: #55b7ff;
+}
+
+.legend-rb {
+    background: #ff5b5b;
+}
+
+
+/* =========================================================
+   REPETIR
+========================================================= */
+
+.repeat-route {
+    flex-shrink: 0;
+
+    padding: 8px 13px;
+
+    background: #101814;
+    color: #b7ff32;
+
+    border: 1px solid #2d3a34;
+    border-radius: 4px;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+.repeat-route:hover {
+    border-color: #b7ff32;
+}
+
+
+/* =========================================================
+   MODO PRÁCTICA
+========================================================= */
+
+.practice-field {
+    cursor: crosshair;
+    touch-action: none;
+    user-select: none;
+}
+
+.user-drawn-route {
+    fill: none;
+
+    stroke: #ffffff;
+    stroke-width: 5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    vector-effect: non-scaling-stroke;
+
+    filter:
+        drop-shadow(
+            0 0 5px #ffffff55
+        );
+}
+
+.answer-route {
+    fill: none;
+
+    stroke: #b7ff32;
+    stroke-width: 5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    stroke-dasharray: 9 7;
+
+    vector-effect: non-scaling-stroke;
+
+    filter:
+        drop-shadow(
+            0 0 6px #b7ff3270
+        );
+
+    animation:
+        revealAnswer 0.4s ease;
+}
+
+@keyframes revealAnswer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   INSTRUCCIÓN PARA DIBUJAR
+========================================================= */
+
+.draw-instruction {
+    position: absolute;
+
+    left: 50%;
+    top: 36%;
+
+    z-index: 8;
+
+    transform:
+        translate(-50%, -50%);
+
+    padding: 9px 14px;
+
+    background: #071008dc;
+    color: #b7ff32;
+
+    border: 1px solid #b7ff3240;
+    border-radius: 4px;
+
+    font-size: 9px;
+    font-weight: 1000;
+
+    letter-spacing: 2px;
+
+    pointer-events: none;
+
+    animation:
+        drawMessage
+        1.4s
+        ease-in-out
+        infinite;
+}
+
+@keyframes drawMessage {
+    0%,
+    100% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   BOTONES DE PRÁCTICA
+========================================================= */
+
+.practice-actions {
+    display: flex;
+    gap: 7px;
+}
+
+.clear-route,
+.check-route {
+    padding: 8px 12px;
+
+    border-radius: 4px;
+
+    font-size: 8px;
+    font-weight: 1000;
+
+    cursor: pointer;
+}
+
+.clear-route {
+    background: #101814;
+    color: #a4aea8;
+
+    border: 1px solid #2d3a34;
+}
+
+.clear-route:hover {
+    border-color: #ffffff70;
+    color: #ffffff;
+}
+
+.check-route {
+    background: #b7ff32;
+    color: #071008;
+
+    border: 1px solid #b7ff32;
+}
+
+.check-route:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   RESULTADO
+========================================================= */
+
+.answer-message {
+    margin-top: 6px;
+    padding: 8px 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #0c1711;
+
+    border: 1px solid #b7ff3235;
+    border-radius: 4px;
+}
+
+.answer-message strong {
+    color: #b7ff32;
+
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.answer-message span {
+    color: #758078;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.learn-footer {
+    min-height: 70px;
+
+    padding: 10px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 28px;
+
+    border-top: 1px solid #27312d;
+}
+
+.learn-footer button {
+    padding: 10px 16px;
+
+    background: #101814;
+    color: #e8ecea;
+
+    border: 1px solid #35413b;
+    border-radius: 5px;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+.learn-footer button:hover {
+    border-color: #b7ff32;
+    color: #b7ff32;
+}
+
+.learn-footer > div {
+    min-width: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+}
+
+.learn-footer > div strong {
+    width: 32px;
+    height: 32px;
+
+    display: grid;
+    place-items: center;
+
+    background: #b7ff32;
+    color: #071008;
+
+    border-radius: 4px;
+
+    font-size: 15px;
+    font-weight: 1000;
+}
+
+.learn-footer > div span {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   LAPTOPS PEQUEÑAS
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .learn-main {
+        grid-template-columns:
+            minmax(270px, 0.8fr)
+            minmax(480px, 1.2fr);
+
+        gap: 25px;
+    }
+
+    .mini-route-list {
+        grid-template-columns:
+            repeat(9, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .learn-header {
+        padding: 0 15px;
+    }
+
+    .learn-main {
+        width: min(
+            650px,
+            calc(100% - 28px)
+        );
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .route-panel {
+        padding-top: 0;
+    }
+
+    .distance-card,
+    .route-description,
+    .learning-tip,
+    .training-selector,
+    .mini-route-list,
+    .pending-route {
+        max-width: none;
+    }
+
+    .mini-route-list {
+        grid-template-columns:
+            repeat(13, minmax(0, 1fr));
+    }
+
+    .learn-field {
+        aspect-ratio: 1.3 / 1;
+    }
+}
+
+
+/* =========================================================
+   TELÉFONO
+========================================================= */
+
+/* =========================================================
+   MOBILE — ROUTE TRAINER
+========================================================= */
+
+@media (max-width: 550px) {
+
+    /* =========================
+       PÁGINA
+    ========================= */
+
+    .learn-page {
+        min-height: 100dvh;
+        overflow-x: hidden;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .learn-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+
+        height: 58px;
+        padding: 0 14px;
+
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+
+        background: rgba(8, 13, 11, 0.96);
+        backdrop-filter: blur(12px);
+
+        border-bottom: 1px solid #26312c;
+    }
+
+    .back-button {
+        justify-self: start;
+
+        padding: 8px 10px;
+
+        font-size: 8px;
+    }
+
+    .learn-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 1px;
+    }
+
+    .learn-title small {
+        font-size: 5px;
+        letter-spacing: 1.5px;
+    }
+
+    .learn-title strong {
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .route-progress {
+        justify-self: end;
+
+        font-size: 10px;
+    }
+
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .learn-main {
+        width: calc(100% - 24px);
+
+        margin: 0 auto;
+
+        padding:
+            16px 0
+            12px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 16px;
+    }
+
+
+    /* =========================
+       INFORMACIÓN DE LA RUTA
+    ========================= */
+
+    .route-panel {
+        width: 100%;
+        padding: 0;
+    }
+
+    .route-heading {
+        gap: 12px;
+    }
+
+    .route-code {
+        width: 54px;
+        height: 54px;
+
+        border-radius: 6px;
+
+        font-size: 31px;
+
+        box-shadow:
+            0 0 0 5px #b7ff3210;
+    }
+
+    .route-heading small {
+        margin-bottom: 3px;
+
+        font-size: 6px;
+    }
+
+    .route-heading h1 {
+        font-size: 27px;
+    }
+
+
+    /* =========================
+       REFERENCIA
+    ========================= */
+
+    .distance-card {
+        max-width: none;
+
+        margin-top: 13px;
+
+        padding: 10px 12px;
+
+        gap: 12px;
+    }
+
+    .distance-card small {
+        font-size: 6px;
+    }
+
+    .distance-card strong {
+        font-size: 13px;
+    }
+
+
+    /* =========================
+       DESCRIPCIÓN
+    ========================= */
+
+    .route-description {
+        max-width: none;
+
+        margin-top: 13px;
+    }
+
+    .route-description small {
+        font-size: 6px;
+    }
+
+    .route-description p {
+        margin-top: 6px;
+
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+
+    /* =========================
+       TIP
+    ========================= */
+
+    .learning-tip {
+        max-width: none;
+
+        margin-top: 11px;
+
+        padding: 9px 10px;
+    }
+
+    .learning-tip span {
+        font-size: 8px;
+    }
+
+    .learning-tip p {
+        font-size: 9px;
+    }
+
+
+    /* =========================
+       MODOS
+    ========================= */
+
+    .training-selector {
+        max-width: none;
+
+        margin-top: 12px;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 7px;
+    }
+
+    .training-selector button {
+        min-height: 42px;
+
+        font-size: 8px;
+    }
+
+
+    /* =========================
+       SELECTOR A-Z
+    ========================= */
+
+    .mini-route-list {
+        max-width: none;
+
+        margin-top: 10px;
+
+        grid-template-columns:
+            repeat(9, 1fr);
+
+        gap: 5px;
+    }
+
+    .mini-route-list button {
+        min-height: 31px;
+
+        aspect-ratio: auto;
+
+        font-size: 9px;
+    }
+
+
+    /* =========================
+       CAMPO
+    ========================= */
+
+    .field-section {
+        width: 100%;
+    }
+
+    .field-header {
+        height: auto;
+
+        margin:
+            2px 2px
+            8px;
+    }
+
+    .field-header small {
+        font-size: 6px;
+    }
+
+    .field-header strong {
+        font-size: 13px;
+    }
+
+    .field-header > span {
+        font-size: 6px;
+    }
+
+    .learn-field {
+        width: 100%;
+
+        /*
+         * Más alto en teléfono para
+         * facilitar dibujar con el dedo.
+         */
+        aspect-ratio: 0.92 / 1;
+
+        border-radius: 6px;
+    }
+
+
+    /* =========================
+       JUGADORES
+    ========================= */
+
+    .formation-circle {
+        width: 31px;
+        height: 31px;
+
+        border-width: 2px;
+
+        font-size: 8px;
+
+        box-shadow:
+            0 0 0 2px #ffffff18;
+    }
+
+    .formation-player {
+        gap: 2px;
+    }
+
+    .formation-player span {
+        padding: 2px 4px;
+
+        font-size: 5px;
+        letter-spacing: 0.5px;
+    }
+
+
+    /* =========================
+       YARDAS
+    ========================= */
+
+    .clean-yard-number {
+        left: 7px;
+
+        min-width: 35px;
+
+        padding: 2px 4px;
+
+        font-size: 6px;
+    }
+
+    .target-yard-label {
+        right: 7px;
+
+        padding: 2px 5px;
+
+        font-size: 5px;
+    }
+
+
+    /* =========================
+       LEYENDA
+    ========================= */
+
+    .field-bottom {
+        width: 100%;
+
+        margin-top: 8px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 8px;
+    }
+
+    .field-legend {
+        justify-content: center;
+
+        gap: 11px;
+    }
+
+    .field-legend span {
+        font-size: 6px;
+    }
+
+    .field-legend i {
+        width: 7px;
+        height: 7px;
+    }
+
+
+    /* =========================
+       REPETIR
+    ========================= */
+
+    .repeat-route {
+        width: 100%;
+
+        min-height: 39px;
+
+        font-size: 8px;
+    }
+
+
+    /* =========================
+       PRACTICAR
+    ========================= */
+
+    .practice-field {
+        /*
+         * Evita que el navegador
+         * haga scroll mientras
+         * dibujamos con el dedo.
+         */
+        touch-action: none;
+    }
+
+    .practice-actions {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns:
+            0.7fr 1.3fr;
+
+        gap: 7px;
+    }
+
+    .clear-route,
+    .check-route {
+        min-height: 42px;
+
+        font-size: 8px;
+    }
+
+    .draw-instruction {
+        top: 30%;
+
+        padding: 9px 12px;
+
+        font-size: 8px;
+    }
+
+
+    /* =========================
+       RESULTADO
+    ========================= */
+
+    .answer-message {
+        margin-top: 8px;
+
+        padding: 9px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 4px;
+    }
+
+    .answer-message strong {
+        font-size: 7px;
+    }
+
+    .answer-message span {
+        font-size: 7px;
+    }
+
+
+    /* =========================
+       Y — PICK
+    ========================= */
+
+    .pick-lb-circle {
+        width: 32px;
+        height: 32px;
+
+        border-width: 2px;
+
+        font-size: 8px;
+    }
+
+    .pick-linebacker > span {
+        font-size: 5px;
+    }
+
+    .pick-read-message {
+        top: 6%;
+
+        padding: 6px 8px;
+
+        gap: 6px;
+    }
+
+    .pick-read-message span {
+        font-size: 6px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .learn-footer {
+        min-height: 62px;
+
+        padding: 8px 12px;
+
+        display: grid;
+        grid-template-columns:
+            1fr auto 1fr;
+
+        gap: 8px;
+    }
+
+    .learn-footer button {
+        padding: 10px 7px;
+
+        font-size: 7px;
+    }
+
+    .learn-footer button:first-child {
+        justify-self: stretch;
+    }
+
+    .learn-footer button:last-child {
+        justify-self: stretch;
+    }
+
+    .learn-footer > div {
+        min-width: auto;
+    }
+
+    .learn-footer > div strong {
+        width: 30px;
+        height: 30px;
+
+        font-size: 13px;
+    }
+
+    .learn-footer > div span {
+        display: none;
+    }
+}
+/* =========================================================
+   Y — PICK
+========================================================= */
+
+.pick-route-layer {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 4;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/* Ruta del receptor */
+
+.pick-receiver-path {
+    fill: none;
+
+    stroke: #b7ff32;
+    stroke-width: 5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    vector-effect:
+        non-scaling-stroke;
+
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+
+    filter:
+        drop-shadow(
+            0 0 5px #b7ff3270
+        );
+
+    animation:
+        drawPickRoute
+        2.6s
+        ease-out
+        forwards;
+}
+
+
+/*
+ * Dejamos una pequeña pausa
+ * para poder observar primero
+ * qué hace el linebacker.
+ */
+
+@keyframes drawPickRoute {
+
+    0% {
+        stroke-dashoffset: 1500;
+    }
+
+    22% {
+        stroke-dashoffset: 1500;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+
+}
+
+
+/* =========================================================
+   LINEBACKER
+========================================================= */
+
+.pick-linebacker {
+    position: absolute;
+
+    left: var(--lb-start-x);
+    top: var(--lb-start-y);
+
+    z-index: 7;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 3px;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+.pick-lb-circle {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    background: #a86cff;
+    color: #ffffff;
+
+    border: 3px solid #071008;
+    border-radius: 50%;
+
+    font-size: 10px;
+    font-weight: 1000;
+
+    box-shadow:
+        0 0 0 3px #a86cff25,
+        0 0 14px #a86cff30;
+}
+
+.pick-linebacker > span {
+    padding: 2px 5px;
+
+    background: #071008e8;
+    color: #c8b1ff;
+
+    border-radius: 3px;
+
+    font-size: 6px;
+    font-weight: 1000;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* LB BAJA */
+
+.pick-linebacker.lb-goes-down {
+    animation:
+        linebackerMove
+        2.6s
+        ease-in-out
+        forwards;
+}
+
+
+/* LB SUBE */
+
+.pick-linebacker.lb-goes-up {
+    animation:
+        linebackerMove
+        2.6s
+        ease-in-out
+        forwards;
+}
+
+
+@keyframes linebackerMove {
+
+    0%,
+    18% {
+        left: var(--lb-start-x);
+        top: var(--lb-start-y);
+    }
+
+    50%,
+    100% {
+        left: var(--lb-end-x);
+        top: var(--lb-end-y);
+    }
+
+}
+
+
+/* =========================================================
+   MENSAJE DE LECTURA
+========================================================= */
+
+.pick-read-message {
+    position: absolute;
+
+    left: 50%;
+    top: 8%;
+
+    z-index: 8;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 7px 11px;
+
+    background: #071008e8;
+
+    border: 1px solid #a86cff50;
+    border-radius: 4px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    animation:
+        showPickRead
+        2.6s
+        ease
+        forwards;
+}
+
+.pick-read-message span {
+    color: #e5d9ff;
+
+    font-size: 8px;
+    font-weight: 1000;
+
+    letter-spacing: 1px;
+}
+
+.pick-read-message strong {
+    color: #b7ff32;
+}
+
+
+@keyframes showPickRead {
+
+    0%,
+    25% {
+        opacity: 0;
+        transform:
+            translate(-50%, -5px);
+    }
+
+    40%,
+    90% {
+        opacity: 1;
+        transform:
+            translate(-50%, 0);
+    }
+
+    100% {
+        opacity: 0.75;
+    }
+
+}
+/* =========================================================
+   MOBILE — MODO PRÁCTICA ENFOCADO
+========================================================= */
+
+@media (max-width: 550px) {
+
+    /*
+     * Cuando estamos practicando,
+     * quitamos información secundaria
+     * para darle protagonismo al campo.
+     */
+
+    .practice-mode .route-description,
+    .practice-mode .learning-tip,
+    .practice-mode .mini-route-list {
+        display: none;
+    }
+
+    .practice-mode {
+        gap: 10px;
+    }
+
+    .practice-mode .distance-card {
+        margin-top: 10px;
+    }
+
+    .practice-mode .field-header {
+        margin-top: 0;
+    }
+
+    /*
+     * Campo todavía más grande
+     * mientras dibujamos.
+     */
+
+    .practice-mode .learn-field {
+        aspect-ratio: 0.82 / 1;
+    }
+
+}
+/* =========================================================
+   MOBILE V2 — CAMPO PRIMERO
+========================================================= */
+
+@media (max-width: 550px) {
+
+    /*
+     * El campo se convierte en el elemento
+     * principal de la pantalla.
+     */
+
+    .route-panel {
+        display: contents;
+    }
+
+    .route-heading {
+        order: 1;
+    }
+
+    .distance-card {
+        order: 2;
+    }
+
+    .training-selector {
+        order: 3;
+    }
+
+    .field-section {
+        order: 4;
+    }
+
+    .route-description {
+        order: 5;
+    }
+
+    .learning-tip {
+        order: 6;
+    }
+
+    .pending-route {
+        order: 6;
+    }
+
+    .mini-route-list {
+        order: 7;
+    }
+
+
+    /*
+     * Como route-panel usa display: contents,
+     * learn-main controla directamente todos
+     * los elementos.
+     */
+
+    .learn-main {
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding-top: 12px;
+    }
+
+
+    /* =====================================================
+       CABECERA DE LA RUTA MÁS COMPACTA
+    ===================================================== */
+
+    .route-heading {
+        gap: 10px;
+    }
+
+    .route-code {
+        width: 48px;
+        height: 48px;
+
+        font-size: 28px;
+    }
+
+    .route-heading h1 {
+        font-size: 24px;
+    }
+
+
+    /* =====================================================
+       REFERENCIA MÁS COMPACTA
+    ===================================================== */
+
+    .distance-card {
+        margin-top: 0;
+
+        min-height: 38px;
+
+        padding: 8px 11px;
+    }
+
+
+    /* =====================================================
+       BOTONES PRINCIPALES
+    ===================================================== */
+
+    .training-selector {
+        margin-top: 0;
+    }
+
+
+    /* =====================================================
+       CAMPO
+    ===================================================== */
+
+    .field-section {
+        margin-top: 2px;
+    }
+
+    .field-header {
+        margin-bottom: 6px;
+    }
+
+    .learn-field {
+        /*
+         * En 320 px da un campo de
+         * aproximadamente 360 px de alto.
+         */
+        aspect-ratio: 0.82 / 1;
+    }
+
+
+    /* =====================================================
+       INFORMACIÓN SECUNDARIA
+    ===================================================== */
+
+    .route-description {
+        margin-top: 5px;
+
+        padding-top: 10px;
+
+        border-top:
+            1px solid #25312b;
+    }
+
+    .learning-tip {
+        margin-top: 0;
+    }
+
+
+    /* =====================================================
+       SELECTOR DE RUTAS AL FINAL
+    ===================================================== */
+
+    .mini-route-list {
+        margin-top: 4px;
+
+        padding-top: 11px;
+
+        border-top:
+            1px solid #25312b;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .learn-footer {
+        margin-top: 5px;
+    }
+}

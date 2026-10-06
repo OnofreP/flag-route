@@ -1,0 +1,490 @@
+* {
+    box-sizing: border-box;
+}
+
+button {
+    font: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+.app {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            #162b24,
+            transparent 35%
+        ),
+        #080d0b;
+
+    color: #f5f7f5;
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+.header {
+    min-height: 90px;
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #25302c;
+}
+
+.header h1 {
+    margin: 4px 0 0;
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+.header h1 span,
+.hero h2 span {
+    color: #b7ff32;
+}
+
+.badge,
+.eyebrow {
+    color: #b7ff32;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #121b17;
+    border: 1px solid #293630;
+    border-radius: 100px;
+
+    padding: 10px 17px;
+}
+
+main {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.hero {
+    min-height: 580px;
+    padding: 70px 40px;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.hero h2 {
+    font-size: clamp(55px, 7vw, 100px);
+    line-height: 0.85;
+    letter-spacing: -6px;
+
+    margin: 18px 0 30px;
+}
+
+.description {
+    color: #9aa49f;
+    line-height: 1.7;
+    max-width: 430px;
+}
+
+.play-button {
+    margin-top: 25px;
+    padding: 18px 25px;
+
+    background: #b7ff32;
+    color: #081008;
+
+    border: 0;
+    border-radius: 5px;
+
+    font-weight: 900;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.play-button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 10px 35px #b7ff3230;
+}
+
+/* CAMPO */
+
+.field-wrapper {
+    position: relative;
+}
+
+.field {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+
+    border: 2px solid #ffffff30;
+    border-radius: 8px;
+
+    background-color: #174a2e;
+
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 9.8%,
+            #ffffff20 10%
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 48px,
+            #ffffff15 50px
+        );
+
+    box-shadow:
+        0 30px 80px #00000080;
+}
+
+.field::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            transparent,
+            #00000055
+        );
+
+    pointer-events: none;
+}
+
+.yard {
+    position: absolute;
+    top: 20px;
+
+    color: #ffffff45;
+    font-weight: 900;
+    font-size: 28px;
+
+    transform: rotate(90deg);
+}
+
+.yard-20 {
+    left: 8%;
+}
+
+.yard-40 {
+    left: 27%;
+}
+
+.yard-50 {
+    left: 48%;
+}
+
+.yard-40b {
+    left: 68%;
+}
+
+.yard-20b {
+    left: 88%;
+}
+
+.player-dot {
+    position: absolute;
+    z-index: 4;
+
+    left: 50%;
+    bottom: 20px;
+
+    transform: translateX(-50%);
+
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #b7ff32;
+    color: #081008;
+
+    font-size: 20px;
+    font-weight: 1000;
+
+    box-shadow:
+        0 0 0 8px #b7ff3220;
+}
+
+.demo-route {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 3;
+}
+
+.demo-route path {
+    fill: none;
+
+    stroke: #b7ff32;
+    stroke-width: 5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+
+    animation:
+        drawRoute 2.5s
+        ease forwards infinite;
+}
+
+@keyframes drawRoute {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+
+    65%,
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.field-label {
+    text-align: right;
+    margin-top: 10px;
+
+    color: #66726c;
+
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* ENTRENAMIENTO */
+
+.training,
+.route-section {
+    padding: 70px 40px;
+}
+
+.training h2,
+.route-section h2 {
+    margin: 8px 0 30px;
+    font-size: 42px;
+}
+
+.modes {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 15px;
+}
+
+.mode-card {
+    min-height: 260px;
+    padding: 25px;
+
+    text-align: left;
+    color: white;
+
+    background: #101714;
+
+    border: 1px solid #27312d;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.mode-card:hover {
+    border-color: #b7ff32;
+    transform: translateY(-7px);
+}
+
+.mode-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mode-icon {
+    font-size: 30px;
+}
+
+.mode-number {
+    color: #4f5c56;
+    font-weight: 900;
+}
+
+.mode-card h3 {
+    margin-top: 55px;
+    margin-bottom: 10px;
+
+    font-size: 22px;
+}
+
+.mode-card p {
+    min-height: 55px;
+
+    color: #87918c;
+    line-height: 1.5;
+}
+
+.enter {
+    color: #b7ff32;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* RUTAS */
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.route-counter {
+    color: #8e9993;
+    font-size: 13px;
+}
+
+.routes {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.route-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px;
+
+    color: white;
+    background: #101714;
+
+    border: 1px solid #26302c;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.route-card:hover {
+    background: #17221d;
+    border-color: #b7ff32;
+}
+
+.route-letter {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    background: #b7ff32;
+    color: #071008;
+
+    border-radius: 5px;
+
+    font-weight: 1000;
+}
+
+.route-name {
+    flex: 1;
+    text-align: left;
+    font-weight: 700;
+}
+
+.route-arrow {
+    color: #647069;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+    }
+
+    .hero h2 {
+        letter-spacing: -4px;
+    }
+
+    .modes,
+    .routes {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .header,
+    .hero,
+    .training,
+    .route-section {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .header {
+        min-height: 75px;
+    }
+
+    .header .badge {
+        display: none;
+    }
+
+    .hero {
+        gap: 35px;
+    }
+
+    .hero h2 {
+        font-size: 58px;
+        letter-spacing: -4px;
+    }
+
+    .field {
+        height: 300px;
+    }
+
+    .modes,
+    .routes {
+        grid-template-columns: 1fr;
+    }
+
+    .mode-card {
+        min-height: 210px;
+    }
+
+    .mode-card h3 {
+        margin-top: 30px;
+    }
+}
