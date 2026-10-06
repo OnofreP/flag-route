@@ -510,24 +510,13 @@ export const routes = [
         highlightYard: null,
 
         description:
-            "Ruta de corredor. Se desplaza en línea recta hacia el lado contrario del quarterback.",
-
-        /*
-        * El RB está del lado derecho.
-        * Pitch cruza en línea recta
-        * hacia el lado contrario del QB.
-        */
+            "Ruta de corredor. Se desplaza en línea recta hacia la derecha.",
 
         path: `
             M 455 440
             L 495 440
         `,
     },
-
-
-    /* =========================
-    Q — SLANT
-    ========================= */
 
     {
         code: "Q",
